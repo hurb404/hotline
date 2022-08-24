@@ -13,7 +13,7 @@ public class Main {
         String final_number_temp = "1-800-";
         char[] ch = user_input.toCharArray();
 
-        String final_number;
+        String final_number = "";
 
         for (int i = 0; i < ch.length; i ++) {
             if (ch[i] == 'a' || ch[i] == 'b' || ch[i] == 'c') {
@@ -42,11 +42,9 @@ public class Main {
 
         if (final_number_temp.length() > 14) {
             char[] fn = final_number_temp.toCharArray();
-            final_number = "";
             for (int j = 0; j < 13; j ++) {
                 String temp_var = Character.toString(fn[j]);
                 final_number = final_number + fn[j];
-                System.out.println(final_number);
             }
         }
 
