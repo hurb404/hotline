@@ -7,8 +7,15 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter a string: ");
-        String user_input = sc.nextLine();
-        user_input = user_input.toLowerCase();
+        String user_input = "";
+
+        try {
+            user_input = sc.nextLine();
+            user_input = user_input.toLowerCase();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input, try again");
+            System.exit(0);
+        }
 
         String final_number_temp = "1-800-";
         char[] ch = user_input.toCharArray();
