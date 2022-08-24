@@ -44,7 +44,6 @@ public class Main {
             } else {
                 System.out.println("Invalid input, try again");
             }
-
         }
 
         if (final_number_temp.length() > 14) {
