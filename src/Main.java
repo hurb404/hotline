@@ -7,38 +7,53 @@ public class Main {
 
         System.out.print("Enter a string: ");
         String user_input = "";
+        user_input = sc.next();
+        user_input = user_input.toLowerCase();
+        char[] b = user_input.toCharArray();
 
-        try {
-            user_input = sc.nextLine();
-            user_input = user_input.toLowerCase();
-        } catch (InputMismatchException e) {
-            System.out.println("Invalid input, try again");
-            System.exit(0);
+        String newStr = "";
+
+        if (b.length > 7) {
+            for (int a = 0; a < 7; a++) {
+                newStr += b[a];
+            }
+        } else if (b.length < 7) {
+            for (int c = 0; c < b.length; c++) {
+                newStr += b[c];
+            }
+
+            int num_of_zeroes = 7 - b.length;
+            for (int d = 0; d < num_of_zeroes; d++) {
+                newStr += "0";
+            }
+        } else if (b.length == 7) {
+            for (int e = 0; e < b.length; e++) {
+                newStr += b[e];
+            }
         }
 
+        char[] ch = newStr.toCharArray();
         String final_number_temp = "1-800-";
-        char[] ch = user_input.toCharArray();
-
         String final_number = "";
 
-        for (int i = 0; i < ch.length; i ++) {
-            if (ch[i] == 'a' || ch[i] == 'b' || ch[i] == 'c') {
+        for (int i = 0; i < b.length; i++) {
+            if (b[i] == 'a' || b[i] == 'b' || b[i] == 'c') {
                 final_number_temp = final_number_temp + "2";
-            } else if (ch[i] == 'd' || ch[i] == 'e' || ch[i] == 'f') {
+            } else if (b[i] == 'd' || b[i] == 'e' || b[i] == 'f') {
                 final_number_temp = final_number_temp + "3";
-            } else if (ch[i] == 'g' || ch[i] == 'h' || ch[i] == 'i') {
+            } else if (b[i] == 'g' || b[i] == 'h' || b[i] == 'i') {
                 final_number_temp = final_number_temp + "4";
-            } else if (ch[i] == 'j' || ch[i] == 'k' || ch[i] == 'l') {
+            } else if (b[i] == 'j' || b[i] == 'k' || b[i] == 'l') {
                 final_number_temp = final_number_temp + "5";
-            } else if (ch[i] == 'm' || ch[i] == 'n' || ch[i] == 'o') {
+            } else if (b[i] == 'm' || b[i] == 'n' || b[i] == 'o') {
                 final_number_temp = final_number_temp + "6";
-            } else if (ch[i] == 'p' || ch[i] == 'q' || ch[i] == 'r' || ch[i] == 's') {
+            } else if (b[i] == 'p' || b[i] == 'q' || b[i] == 'r' || b[i] == 's') {
                 final_number_temp = final_number_temp + "7";
-            } else if (ch[i] == 't' || ch[i] == 'u' || ch[i] == 'v') {
+            } else if (b[i] == 't' || b[i] == 'u' || b[i] == 'v') {
                 final_number_temp = final_number_temp + "8";
-            } else if (ch[i] == 'w' || ch[i] == 'x' || ch[i] == 'y' || ch[i] == 'z') {
+            } else if (b[i] == 'w' || b[i] == 'x' || b[i] == 'y' || b[i] == 'z') {
                 final_number_temp = final_number_temp + "9";
-            } else if (ch[i] == ' ') {
+            } else if (b[i] == ' ') {
                 continue;
             } else {
                 System.out.println("Invalid input, try again");
@@ -47,7 +62,7 @@ public class Main {
 
         if (final_number_temp.length() > 14) {
             char[] fn = final_number_temp.toCharArray();
-            for (int j = 0; j < 13; j ++) {
+            for (int j = 0; j < 13; j++) {
                 String temp_var = Character.toString(fn[j]);
                 final_number = final_number + fn[j];
             }
