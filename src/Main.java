@@ -25,11 +25,11 @@ public class Main {
 
         if (b_new.length > 7) {
             for (int a = 0; a < 7; a++) {
-                newStr += b[a];
+                newStr += b_new[a];
             }
         } else if (b_new.length < 7) {
             for (int c = 0; c < b_new.length; c++) {
-                newStr += b[c];
+                newStr += b_new[c];
             }
 
             int num_of_zeroes = 7 - b_new.length;
@@ -44,7 +44,6 @@ public class Main {
 
         char[] ch = newStr.toCharArray();
         String final_number_temp = "1-800-";
-        String final_number = "";
 
         for (int i = 0; i < ch.length; i++) {
             if (ch[i] == 'a' || ch[i] == 'b' || ch[i] == 'c') {
