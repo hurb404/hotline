@@ -67,12 +67,11 @@ public class Main {
             }
         }
 
-        System.out.println(final_number_temp);
-
-        // TODO add dash at 9th index in final_number
         // TODO figure out ways it could crash
+        String string1 = final_number_temp.substring(0,9);
+        String string2 = final_number_temp.substring(9);
+        String final_number = string1 + "-" + string2;
 
-
-
+        System.out.println(final_number);
     }
 }
