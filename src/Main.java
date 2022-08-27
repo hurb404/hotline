@@ -70,5 +70,10 @@ public class Main {
 
         System.out.println(final_number_temp);
 
+        // TODO add dash at 9th index in final_number
+        // TODO figure out ways it could crash
+
+
+
     }
 }
