@@ -7,28 +7,38 @@ public class Main {
 
         System.out.print("Enter a string: ");
         String user_input = "";
-        user_input = sc.next();
+        user_input = sc.nextLine();
+
         user_input = user_input.toLowerCase();
         char[] b = user_input.toCharArray();
 
+        String temp = "";
+
+        for (int f = 0; f < b.length; f++) {
+            if (b[f] != ' ') {
+                temp = temp + b[f];
+            }
+        }
+
+        char[] b_new = temp.toCharArray();
         String newStr = "";
 
-        if (b.length > 7) {
+        if (b_new.length > 7) {
             for (int a = 0; a < 7; a++) {
                 newStr += b[a];
             }
-        } else if (b.length < 7) {
-            for (int c = 0; c < b.length; c++) {
+        } else if (b_new.length < 7) {
+            for (int c = 0; c < b_new.length; c++) {
                 newStr += b[c];
             }
 
-            int num_of_zeroes = 7 - b.length;
+            int num_of_zeroes = 7 - b_new.length;
             for (int d = 0; d < num_of_zeroes; d++) {
                 newStr += "0";
             }
-        } else if (b.length == 7) {
-            for (int e = 0; e < b.length; e++) {
-                newStr += b[e];
+        } else if (b_new.length == 7) {
+            for (int e = 0; e < b_new.length; e++) {
+                newStr += b_new[e];
             }
         }
 
@@ -36,39 +46,29 @@ public class Main {
         String final_number_temp = "1-800-";
         String final_number = "";
 
-        for (int i = 0; i < b.length; i++) {
-            if (b[i] == 'a' || b[i] == 'b' || b[i] == 'c') {
+        for (int i = 0; i < ch.length; i++) {
+            if (ch[i] == 'a' || ch[i] == 'b' || ch[i] == 'c') {
                 final_number_temp = final_number_temp + "2";
-            } else if (b[i] == 'd' || b[i] == 'e' || b[i] == 'f') {
+            } else if (ch[i] == 'd' || ch[i] == 'e' || ch[i] == 'f') {
                 final_number_temp = final_number_temp + "3";
-            } else if (b[i] == 'g' || b[i] == 'h' || b[i] == 'i') {
+            } else if (ch[i] == 'g' || ch[i] == 'h' || ch[i] == 'i') {
                 final_number_temp = final_number_temp + "4";
-            } else if (b[i] == 'j' || b[i] == 'k' || b[i] == 'l') {
+            } else if (ch[i] == 'j' || ch[i] == 'k' || ch[i] == 'l') {
                 final_number_temp = final_number_temp + "5";
-            } else if (b[i] == 'm' || b[i] == 'n' || b[i] == 'o') {
+            } else if (ch[i] == 'm' || ch[i] == 'n' || ch[i] == 'o') {
                 final_number_temp = final_number_temp + "6";
-            } else if (b[i] == 'p' || b[i] == 'q' || b[i] == 'r' || b[i] == 's') {
+            } else if (ch[i] == 'p' || ch[i] == 'q' || ch[i] == 'r' || ch[i] == 's') {
                 final_number_temp = final_number_temp + "7";
-            } else if (b[i] == 't' || b[i] == 'u' || b[i] == 'v') {
+            } else if (ch[i] == 't' || ch[i] == 'u' || ch[i] == 'v') {
                 final_number_temp = final_number_temp + "8";
-            } else if (b[i] == 'w' || b[i] == 'x' || b[i] == 'y' || b[i] == 'z') {
+            } else if (ch[i] == 'w' || ch[i] == 'x' || ch[i] == 'y' || ch[i] == 'z') {
                 final_number_temp = final_number_temp + "9";
-            } else if (b[i] == ' ') {
-                continue;
-            } else {
-                System.out.println("Invalid input, try again");
+            } else if (ch[i] == '0' || ch[i] == '1' || ch[i] == '2' || ch[i] == '3' || ch[i] == '4' || ch[i] == '5' || ch[i] == '6' || ch[i] == '7' || ch[i] == '8' || ch[i] == '9') {
+                final_number_temp = final_number_temp + ch[i];
             }
         }
 
-        if (final_number_temp.length() > 14) {
-            char[] fn = final_number_temp.toCharArray();
-            for (int j = 0; j < 13; j++) {
-                String temp_var = Character.toString(fn[j]);
-                final_number = final_number + fn[j];
-            }
-        }
-
-        System.out.println(final_number);
+        System.out.println(final_number_temp);
 
     }
 }
